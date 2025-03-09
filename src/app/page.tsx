@@ -8,10 +8,12 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
+import { calculateYearsFromNow } from "@/lib/date"
+import { siteConfig } from "@/constants/config"
 
 export const metadata: Metadata = {
-  title: "John Doe | Fullstack Developer",
-  description: "Portfolio website of John Doe, a fullstack developer with 6 years of experience",
+  title: `${siteConfig.name} | ${siteConfig.role}`,
+  description: `${siteConfig.MetaDescription}`,
 }
 
 export default function Home() {

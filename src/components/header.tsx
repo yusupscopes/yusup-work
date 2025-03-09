@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
+import { siteNavLinks as navItems, siteConfig } from "@/constants/config"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -15,15 +16,6 @@ export function Header() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50)
   })
-
-  const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Experience", href: "#experience" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
-  ]
 
   return (
     <motion.header
@@ -37,7 +29,7 @@ export function Header() {
     >
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="font-bold text-xl">
-          John<span className="text-primary">Doe</span>
+          {siteConfig.name}
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
