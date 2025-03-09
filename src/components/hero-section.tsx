@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { siteConfig } from "@/constants/config";
 
 export function HeroSection() {
   return (
@@ -32,7 +33,7 @@ export function HeroSection() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                John Doe
+                {siteConfig.name}
               </motion.h1>
               <motion.h2
                 className="text-2xl md:text-3xl font-medium text-muted-foreground mt-2"
@@ -40,7 +41,7 @@ export function HeroSection() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                Fullstack Developer
+                {siteConfig.role}
               </motion.h2>
             </div>
 
@@ -50,8 +51,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              With 6 years of experience building robust web applications. Specialized in creating modern,
-              high-performance solutions with cutting-edge technologies.
+              {siteConfig.description}
             </motion.p>
 
             <motion.div
@@ -76,24 +76,19 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon">
-                  <Github className="h-5 w-5" />
-                  <span className="sr-only">GitHub</span>
-                </Button>
-              </Link>
-              <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon">
-                  <Linkedin className="h-5 w-5" />
-                  <span className="sr-only">LinkedIn</span>
-                </Button>
-              </Link>
-              <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon">
-                  <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Twitter</span>
-                </Button>
-              </Link>
+              {siteConfig.socials.map((social, index) => (
+                <Link
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="ghost" size="icon">
+                    <social.icon className="h-5 w-5" />
+                    <span className="sr-only">{social.name}</span>
+                  </Button>
+                </Link>
+              ))}
             </motion.div>
           </motion.div>
 
@@ -106,11 +101,13 @@ export function HeroSection() {
             <div className="relative aspect-square max-w-md mx-auto">
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-primary/0 animate-pulse" />
               <Image
-                src="/placeholder.svg?height=500&width=500"
-                alt="John Doe"
+                src={
+                  siteConfig.avatar ?? "/placeholder.svg?height=500&width=500"
+                }
+                alt={siteConfig.name}
                 width={500}
                 height={500}
-                className="rounded-full object-cover border-4 border-background shadow-xl"
+                className="rounded-lg object-cover border-4 border-background shadow-xl"
                 priority
               />
             </div>
@@ -124,6 +121,5 @@ export function HeroSection() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       </div>
     </section>
-  )
+  );
 }
-

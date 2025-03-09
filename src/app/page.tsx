@@ -13,7 +13,7 @@ import { siteConfig } from "@/constants/config"
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} | ${siteConfig.role}`,
-  description: `${siteConfig.MetaDescription}`,
+  description: `${siteConfig.description}`,
 }
 
 export default function Home() {

@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
-import { siteNavLinks as navItems, siteConfig } from "@/constants/config"
+import { siteConfig } from "@/constants/config"
+import DownloadResume from "./download-resume"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -33,12 +34,12 @@ export function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
-          {navItems.map((item) => (
+          {siteConfig.navItems.map((item) => (
             <Link key={item.name} href={item.href} className="text-sm font-medium transition-colors hover:text-primary">
               {item.name}
             </Link>
           ))}
-          <Button>Download CV</Button>
+          <DownloadResume />
         </nav>
 
         <Sheet>
@@ -50,7 +51,7 @@ export function Header() {
           </SheetTrigger>
           <SheetContent side="right">
             <nav className="flex flex-col gap-4 mt-8">
-              {navItems.map((item) => (
+              {siteConfig.navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}

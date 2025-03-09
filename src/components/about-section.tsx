@@ -7,6 +7,9 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Code, Globe, Server } from "lucide-react"
+import { calculateYearsFromNow } from "@/lib/date"
+import DownloadResume from "./download-resume"
+import { siteConfig } from "@/constants/config"
 
 export function AboutSection() {
   const ref = useRef(null)
@@ -44,16 +47,15 @@ export function AboutSection() {
           <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight mb-4">About Me</h2>
             <p className="text-muted-foreground text-lg">
-              I'm a passionate fullstack developer with 6 years of experience creating modern web applications. I
-              specialize in building scalable, high-performance solutions that deliver exceptional user experiences.
+              Over the years, I’ve honed my skills by working on various projects, from simple landing pages to complex web applications (both front-end and back-end). I take pride in writing clean, efficient code and continuously learning new techniques to stay current in this ever-evolving field.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div variants={itemVariants} className="relative">
-              <div className="relative aspect-[4/3] rounded-lg overflow-hidden border shadow-lg">
+              <div className="relative aspect-[4/2.5] rounded-lg overflow-hidden border shadow-lg">
                 <Image
-                  src="/placeholder.svg?height=600&width=800"
+                  src={siteConfig.resume.image ?? "/placeholder.svg?height=600&width=800"}
                   alt="John Doe working"
                   width={800}
                   height={600}
@@ -61,7 +63,7 @@ export function AboutSection() {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-4 rounded-lg shadow-lg">
-                <p className="font-bold text-xl">6+</p>
+                <p className="font-bold text-xl">{calculateYearsFromNow("2019-02-11")}+</p>
                 <p className="text-sm">Years Experience</p>
               </div>
             </motion.div>
@@ -77,7 +79,7 @@ export function AboutSection() {
                 or sharing my knowledge through blog posts and community events.
               </p>
               <div className="flex gap-4 mt-2">
-                <Button>Download CV</Button>
+                <DownloadResume />
                 <Button variant="outline">Read More</Button>
               </div>
             </motion.div>
