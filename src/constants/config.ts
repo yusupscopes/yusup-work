@@ -38,4 +38,22 @@ export const siteConfig = {
       icon: Instagram,
     },
   ],
+  experiences: [
+    {
+      title: "Senior Software Engineer",
+      company: "PT Kokatto Teknologi Global",
+      period: "2021 - Present",
+      description:
+        "Designed and developed scalable backend architectures using NestJS and Node.js, implemented RESTful APIs, optimized database performance with MongoDB, integrated AWS services (Lambda, S3, DynamoDB), and ensured best practices in system design, security, and DevOps.",
+      technologies: ["Go", "Python", "Node.js", "TypeScript", "AWS", "DynamoDB"],
+    },
+    {
+      title: "Junior Software Engineer",
+      company: "PT Kokatto Teknologi Global",
+      period: "2019 - 2021",
+      description:
+        "Developed and maintained multiple client projects. Collaborated with design and product teams to deliver high-quality web applications.",
+      technologies: ["Vue.js", "Node.js", "Java", "Spring Boot", "MySQL", "Docker"],
+    }
+  ]
 };
