@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowUp } from "lucide-react"
+import { siteConfig } from "@/constants/config"
 
 export function Footer() {
   const scrollToTop = () => {
@@ -18,7 +19,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8">
           <div className="flex flex-col items-center md:items-start gap-2">
             <Link href="/" className="font-bold text-xl">
-              John<span className="text-primary">Doe</span>
+              {siteConfig.name}
             </Link>
             <p className="text-muted-foreground text-center md:text-left">
               Fullstack developer crafting exceptional digital experiences.
@@ -70,60 +71,37 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="mailto:john.doe@example.com"
+                  href="mailto:yusupmaulana950@gmail.com"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  john.doe@example.com
+                  yusupmaulana950@gmail.com
                 </a>
               </li>
-              <li>
-                <a href="tel:+15551234567" className="text-muted-foreground hover:text-foreground transition-colors">
-                  +1 (555) 123-4567
-                </a>
-              </li>
-              <li className="text-muted-foreground">San Francisco, CA</li>
+              <li className="text-muted-foreground">Jakarta, Indonesia</li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-medium mb-4">Social</h3>
             <ul className="space-y-2">
-              <li>
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Twitter
-                </a>
-              </li>
+              {siteConfig.socials.map((social, index) => (
+                <li key={index}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {social.name}
+                  </a>
+                </li>                
+              ))}
             </ul>
           </div>
         </div>
 
         <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} John Doe. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Privacy Policy
