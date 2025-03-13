@@ -35,33 +35,33 @@ export function TestimonialsSection() {
     {
       name: "Sarah Johnson",
       position: "CTO, TechStart Inc.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "https://doodleipsum.com/100x100/avatar?i=33027857756ff71ebec44e01ec26387b",
       content:
-        "John is an exceptional developer who consistently delivers high-quality work. His technical expertise and problem-solving skills have been invaluable to our projects.",
+        "Yusup is an exceptional developer who consistently delivers high-quality work. His technical expertise and problem-solving skills have been invaluable to our projects.",
       rating: 5,
     },
     {
       name: "Michael Chen",
       position: "Product Manager, InnovateCorp",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "https://doodleipsum.com/100x100/avatar?i=0982f4df9832c64655e0d5a3d03c7ec1",
       content:
-        "Working with John was a pleasure. He not only understood our technical requirements but also provided valuable insights that improved our product.",
+        "Working with Yusup was a pleasure. He not only understood our technical requirements but also provided valuable insights that improved our product.",
       rating: 5,
     },
     {
       name: "Emily Rodriguez",
       position: "Founder, DesignHub",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "https://doodleipsum.com/100x100/avatar?i=3533bd4fd20e8ae0528f2006722f958a",
       content:
-        "John's ability to translate complex designs into functional code is impressive. He's a reliable developer who consistently meets deadlines.",
+        "Yusup's ability to translate complex designs into functional code is impressive. He's a reliable developer who consistently meets deadlines.",
       rating: 5,
     },
     {
       name: "David Kim",
       position: "Lead Developer, WebSolutions",
-      image: "/placeholder.svg?height=100&width=100",
+      image: "https://doodleipsum.com/100x100/avatar?i=8cb73ce685d8071fc7374ccd71072c5d",
       content:
-        "I've worked with many developers, but John stands out for his attention to detail and commitment to writing clean, maintainable code.",
+        "I've worked with many developers, but Yusup stands out for his attention to detail and commitment to writing clean, maintainable code.",
       rating: 4,
     },
   ]

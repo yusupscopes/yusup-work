@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import { Progress } from "@/components/ui/progress"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Progress } from "@/components/ui/progress";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function SkillsSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -18,7 +18,7 @@ export function SkillsSection() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -27,25 +27,23 @@ export function SkillsSection() {
       opacity: 1,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
   const frontendSkills = [
-    { name: "React / Next.js", level: 95 },
-    { name: "TypeScript", level: 90 },
-    { name: "HTML / CSS", level: 95 },
-    { name: "Tailwind CSS", level: 90 },
-    { name: "Vue.js", level: 80 },
-    { name: "Angular", level: 75 },
-  ]
+    { name: "React / Next.js", level: 85 },
+    { name: "TypeScript", level: 80 },
+    { name: "HTML / CSS", level: 90 },
+    { name: "Tailwind CSS", level: 85 },
+    { name: "Vue.js", level: 90 },
+  ];
 
   const backendSkills = [
     { name: "Node.js", level: 90 },
-    { name: "Express", level: 85 },
+    { name: "NestJS", level: 85 },
     { name: "PostgreSQL", level: 80 },
     { name: "MongoDB", level: 85 },
-    { name: "GraphQL", level: 75 },
     { name: "REST APIs", level: 90 },
-  ]
+  ];
 
   const otherSkills = [
     { name: "Git / GitHub", level: 90 },
@@ -54,7 +52,7 @@ export function SkillsSection() {
     { name: "CI/CD", level: 85 },
     { name: "Testing", level: 80 },
     { name: "Agile / Scrum", level: 85 },
-  ]
+  ];
 
   const SkillList = ({ skills }) => (
     <div className="space-y-6">
@@ -68,7 +66,7 @@ export function SkillsSection() {
         </motion.div>
       ))}
     </div>
-  )
+  );
 
   return (
     <section id="skills" className="py-20 bg-muted/50">
@@ -80,10 +78,16 @@ export function SkillsSection() {
           variants={containerVariants}
           className="flex flex-col gap-12"
         >
-          <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">My Skills</h2>
+          <motion.div
+            variants={itemVariants}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <h2 className="text-3xl font-bold tracking-tight mb-4">
+              My Skills
+            </h2>
             <p className="text-muted-foreground text-lg">
-              A comprehensive overview of my technical skills and proficiency levels.
+              A comprehensive overview of my technical skills and proficiency
+              levels.
             </p>
           </motion.div>
 
@@ -106,18 +110,18 @@ export function SkillsSection() {
             </Tabs>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 mt-8">
+          <motion.div
+            variants={itemVariants}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 mt-8"
+          >
             {[
-              "JavaScript",
               "TypeScript",
-              "React",
+              "React/Next.js",
               "Node.js",
-              "Next.js",
+              "NestJS",
               "Vue.js",
-              "Express",
               "MongoDB",
               "PostgreSQL",
-              "GraphQL",
               "AWS",
               "Docker",
             ].map((tech, index) => (
@@ -132,6 +136,5 @@ export function SkillsSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-
