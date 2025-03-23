@@ -34,37 +34,38 @@ export function ProjectsSection() {
 
   const projects = [
     {
-      title: "E-commerce Platform",
+      title: "URL Shortener UI",
       description:
-        "A full-featured e-commerce platform with product management, cart functionality, and payment processing.",
+        "A simple yet responsive UI page for URL shortening.",
       image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Next.js", "TypeScript", "Stripe", "MongoDB", "Tailwind CSS"],
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/yusupscopes/aws-url-shortener-web",
     },
     {
-      title: "Task Management App",
+      title: "Currency Converter API",
       description:
-        "A collaborative task management application with real-time updates and team collaboration features.",
+        "A simple FastAPI application for currency conversion using AWS services.",
       image: "/placeholder.svg?height=400&width=600",
-      technologies: ["React", "Node.js", "Socket.io", "PostgreSQL", "Redux"],
+      technologies: ["Python", "FastAPI", "AWS Lambda"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/yusupscopes/aws-simple-currency-converter",
     },
     {
-      title: "Finance Dashboard",
+      title: "Shift Reminder System (Automated Notifications)",
       description:
-        "An interactive dashboard for tracking financial data with customizable widgets and data visualization.",
+        "An automated system for managing and sending shift schedule reminders using AWS services.",
       image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Vue.js", "Express", "D3.js", "MySQL", "Docker"],
+      technologies: ["Python", "AWS Lambda", "AWS SNS", "AWS S3", "AWS EventBridge", "AWS DynamoDB", "Terraform"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/yusupscopes/aws-shift-reminder",
     },
     {
-      title: "Social Media Platform",
-      description: "A social networking platform with user profiles, posts, comments, and real-time notifications.",
+      title: "Merchant Storefront and Dashboard (Shopify-like)",
+      description:
+        "An e-commerce-like platform with product management, cart functionality, payment processing, and order tracking.",
       image: "/placeholder.svg?height=400&width=600",
-      technologies: ["React", "GraphQL", "AWS", "MongoDB", "Redis"],
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "AWS S3", "API Route", "MongoDB"],
       liveUrl: "#",
       githubUrl: "#",
     },
